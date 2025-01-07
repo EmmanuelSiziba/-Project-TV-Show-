@@ -31,6 +31,13 @@ episodeList.forEach((episode) => {
   epidoeImage.src = episode.image?.medium || 'placeholder.jpg';
   episodeImage.alt = episode.name;
 
+  const episodeSummary = document.createElement('p')
+  episodeSummary.innerHTML = episode.episodeSummary || 'No summary available';
+
+  episodeCard.appendChild(episode.episodeTitle);
+  episodeCard.appendChild(episode.episodeImage);
+  episodeCard.appendChild(episode.episodeSummary);
+
 })
 
 
