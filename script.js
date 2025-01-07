@@ -25,7 +25,11 @@ episodeList.forEach((episode) => {
 
   const episodeTitle = document.createElement('h3');
   episodeTitle.textcontent = `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}`;
-  
+
+
+  const epidoeImage = document.createElement('img');
+  epidoeImage.src = episode.image?.medium || 'placeholder.jpg';
+  episodeImage.alt = episode.name;
 
 })
 
