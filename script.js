@@ -9,4 +9,8 @@ function makePageForEpisodes(episodeList) {
   rootElem.textContent = `Got ${episodeList.length} episode(s)`;
 }
 
+
+const episodeCount = document.createElement('p');
+
+
 window.onload = setup;
