@@ -15,5 +15,16 @@ episodeCount.textContent = `Got ${episodeList.length} episode(s)`;
 rootElem.appendChild(episodeCount);
 
 
+const episodeContainer = document.createAttribute('div');
+episodeContainer.id = `episode-container`;
+rootElem.appendChild(episodeContainer);
+
+episodeList.forEach((episode) => {
+  const episodeCard = document.createElement('div');
+  episodeCard.episode.className = 'episode-card';
+
+})
+
+
 
 window.onload = setup;
