@@ -23,6 +23,10 @@ episodeList.forEach((episode) => {
   const episodeCard = document.createElement('div');
   episodeCard.episode.className = 'episode-card';
 
+  const episodeTitle = document.createElement('h3');
+  episodeTitle.textcontent = `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}`;
+  
+
 })
 
 
