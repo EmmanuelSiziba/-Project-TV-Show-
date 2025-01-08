@@ -4,5 +4,15 @@
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
-  
+
 }
+
+.episode-card { 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15.5rem;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+}
+
