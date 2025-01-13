@@ -16,6 +16,11 @@ function createSearchBar(){
 
   const searchContainer = document.createElement("div");
   searchContainer.id = "search-container";
+
+  const searchInput = document.createElement("input");
+  searchInput.type = "text";
+  searchInput.id = "search-input";
+  searchInput.placeholder = "Search episodes by title or summary";
 }
 
 function makePageForEpisodes(episodeList) {
