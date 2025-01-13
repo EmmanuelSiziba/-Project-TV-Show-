@@ -1,12 +1,13 @@
 const state = {
-  episodes: [],
-  searchTerm: "",
+  episodes: [], // will store all episodes fetched from getAllEpisodes() function 
+  searchTerm: "", // tracks the search term entered by the user
 };
 
 function setup() {
+  //Initialize the state will all episodes 
   state.episodes = getAllEpisodes();
 
-  createSearchBar();
+  createSearchBar(); // create search bar and render the initial episodes
   makePageForEpisodes(state.episodes);
 }
 
