@@ -3,12 +3,11 @@ const state = {
   searchTerm: "",
 };
 
-
-
-
 function setup() {
-  const allEpisodes = getAllEpisodes();
-  makePageForEpisodes(allEpisodes);
+  state.episodes = getAllEpisodes();
+
+  createSearchBar();
+  makePageForEpisodes(state.episodes);
 }
 
  
