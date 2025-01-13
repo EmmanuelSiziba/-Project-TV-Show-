@@ -11,7 +11,13 @@ function setup() {
   makePageForEpisodes(state.episodes);
 }
 
- 
+function createSearchBar(){
+  const rootElem = document.getElementById("root");
+
+  const searchContainer = document.createElement("div");
+  searchContainer.id = "search-container";
+}
+
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
   rootElem.innerHTML = '';  
