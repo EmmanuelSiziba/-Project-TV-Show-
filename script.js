@@ -1,3 +1,11 @@
+const state = {
+  episodes: [],
+  searchTerm: "",
+};
+
+
+
+
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
