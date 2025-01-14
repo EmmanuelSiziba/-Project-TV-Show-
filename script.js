@@ -35,6 +35,11 @@ function createSearchBar(){
     searchCount.textContent = `Got ${filteredElements.length} episode(s)`;
     makePageForEpisodes(filteredEpisodes)
   });
+
+  searchContainer.appendChild(searchInput);
+  searchContainer.appendChild(searchCount);
+
+  rootElem.prepend(searchContainer);
 }
 
 function makePageForEpisodes(episodeList) {
