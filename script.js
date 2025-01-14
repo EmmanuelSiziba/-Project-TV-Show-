@@ -14,14 +14,17 @@ function setup() {
 function createSearchBar(){
   const rootElem = document.getElementById("root");
 
+  // search container 
   const searchContainer = document.createElement("div");
   searchContainer.id = "search-container";
 
+  //input field for searching 
   const searchInput = document.createElement("input");
   searchInput.type = "text";
   searchInput.id = "search-input";
   searchInput.placeholder = "Search episodes by title or summary";
 
+  //paragraph to show number of matching episodes
   const searchCount = document.createElement("p");
   searchCount.id = "search-count";
   searchCount.textContent = `Got ${state.episodes.length} episode(s)`;
