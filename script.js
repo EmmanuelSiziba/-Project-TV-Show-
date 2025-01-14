@@ -32,7 +32,7 @@ function createSearchBar(){
   // event listener to update search term and filter episodes 
   searchInput.addEventListener("input", () => {
     state.searchTerm = searchInput.value.toLowerCase();
-    const filteredEpisodes = filterEpisodes();
+    const filteredEpisodes = filteredEpisodes();
     searchCount.textContent = `Got ${filteredElements.length} episode(s)`;
     makePageForEpisodes(filteredEpisodes)
   });
