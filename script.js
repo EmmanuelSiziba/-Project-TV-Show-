@@ -65,42 +65,31 @@ function makePageForEpisodes(episodeList) {
   episodeList.forEach((episode) => {
     const episodeCard = document.createElement("div");
     episodeCard.className = "episode-card";
-  })
 
-  const episodeCount = document.createElement('p');
-  episodeCount.textContent = `Got ${episodeList.length} episode(s)`;
-  rootElem.appendChild(episodeCount);
+    // episode title with formatted code
+    const episodeTitle = document.createElement('h3');
+    episodeTitle.textContent = `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}`;
 
- 
-  const episodeContainer = document.createElement('div');
-  episodeContainer.id = 'episode-container';
-  rootElem.appendChild(episodeContainer);
+    const episodeImage = document.createElement('img');
+    episodeImage.src = episode.image?.medium || 'placeholder.jpg';
+    episodeImage.alt = episode.name;
 
-  episodeList.forEach((episode) => {
-      const episodeCard = document.createElement('div');
-      episodeCard.className = 'episode-card';
+    const episodeSummary = document.createElement('p');
+    episodeSummary.innerHTML = episode.summary || 'No summary available.';
 
-       
-      const episodeTitle = document.createElement('h3');
-      episodeTitle.textContent = `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}`;
+    episodeCard.appendChild(episodeTitle);
+    episodeCard.appendChild(episodeImage);
+    episodeCard.appendChild(episodeSummary);
 
-    
-      const episodeImage = document.createElement('img');
-      episodeImage.src = episode.image?.medium || 'placeholder.jpg';
-      episodeImage.alt = episode.name;
 
-       
-      const episodeSummary = document.createElement('p');
-      episodeSummary.innerHTML = episode.summary || 'No summary available.';
+    episodeContainer.appendChild(episodeCard);
 
- 
-      episodeCard.appendChild(episodeTitle);
-      episodeCard.appendChild(episodeImage);
-      episodeCard.appendChild(episodeSummary);
-
-       
-      episodeContainer.appendChild(episodeCard);
   });
+
+  if (!existingContainer) {
+    rootElem.appendChild(episodeContainer);
+  }
+  
 }
 
  
