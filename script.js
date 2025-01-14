@@ -45,6 +45,7 @@ function createSearchBar(){
   rootElem.prepend(searchContainer);
 }
 
+// function to filter episodes based on the search term 
 function filteredEpisodes(){
   const searchTerm = state.searchTerm;
   return state.episodes.filter((episode) => episode.name.toLowerCase().includes(searchTerm) || (episode.summary && episode.summary.toLowerCase().includes(searchTerm)));
