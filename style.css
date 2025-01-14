@@ -6,6 +6,17 @@
   margin-top: 1rem;
 }
 
+#search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-count {
+  margin-top: 6rem;
+  margin-left: -9.50rem;
+}
+
 .episode-card {
   border: 1px solid #ccc;
   border-radius: 5px;
