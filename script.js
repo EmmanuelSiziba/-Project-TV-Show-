@@ -45,6 +45,11 @@ function createSearchBar(){
   rootElem.prepend(searchContainer);
 }
 
+function filteredEpisodes(){
+  const searchTerm = state.searchTerm;
+  return state.episodes.filter((episode) => episode.name.toLowerCase().includes(searchTerm) || (episode.summary && episode.summary.toLowerCase().includes(searchTerm)));
+}
+
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
   rootElem.innerHTML = '';  
