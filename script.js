@@ -33,7 +33,7 @@ function createSearchBar(){
   searchInput.addEventListener("input", () => {
     state.searchTerm = searchInput.value.toLowerCase();
     const filteredEpisodes = filteredEpisodes();
-    searchCount.textContent = `Got ${filteredElements.length} episode(s)`;
+    searchCount.textContent = `Got ${filteredEpisodes.length} episode(s)`;
     makePageForEpisodes(filteredEpisodes)
   });
 
