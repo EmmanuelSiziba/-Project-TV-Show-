@@ -51,14 +51,17 @@ function filteredEpisodes(){
   return state.episodes.filter((episode) => episode.name.toLowerCase().includes(searchTerm) || (episode.summary && episode.summary.toLowerCase().includes(searchTerm)));
 }
 
+//function to render episodes 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
   const existingContainer = document.getElementById("episode-container"); 
 
+  //create or clear the episode container
   episodeContainer = existingContainer || document.createElement("div");
   episodeContainer.id = "episode-container";
   episodeContainer.innerHTML = "";
 
+  //create cards for each episode
   episodeList.forEach((episode) => {
     const episodeCard = document.createElement("div");
     episodeCard.className = "episode-card";
