@@ -29,6 +29,7 @@ function createSearchBar(){
   searchCount.id = "search-count";
   searchCount.textContent = `Got ${state.episodes.length} episode(s)`;
 
+  // event listener to update search term and filter episodes 
   searchInput.addEventListener("input", () => {
     state.searchTerm = searchInput.value.toLowerCase();
     const filteredEpisodes = filterEpisodes();
@@ -36,9 +37,11 @@ function createSearchBar(){
     makePageForEpisodes(filteredEpisodes)
   });
 
+  //append elements to the search container 
   searchContainer.appendChild(searchInput);
   searchContainer.appendChild(searchCount);
 
+  //add the search container to the top of the root element
   rootElem.prepend(searchContainer);
 }
 
