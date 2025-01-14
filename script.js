@@ -21,6 +21,10 @@ function createSearchBar(){
   searchInput.type = "text";
   searchInput.id = "search-input";
   searchInput.placeholder = "Search episodes by title or summary";
+
+  const searchCount = document.createElement("p");
+  searchCount.id = "search-count";
+  searchCount.textContent = `Got ${state.episodes.length} episode(s)`;
 }
 
 function makePageForEpisodes(episodeList) {
