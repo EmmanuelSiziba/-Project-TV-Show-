@@ -28,6 +28,13 @@ function createSearchBar(){
   const searchCount = document.createElement("p");
   searchCount.id = "search-count";
   searchCount.textContent = `Got ${state.episodes.length} episode(s)`;
+
+  searchInput.addEventListener("input", () => {
+    state.searchTerm = searchInput.value.toLowerCase();
+    const filteredEpisodes = filterEpisodes();
+    searchCount.textContent = `Got ${filteredElements.length} episode(s)`;
+    makePageForEpisodes(filteredEpisodes)
+  });
 }
 
 function makePageForEpisodes(episodeList) {
