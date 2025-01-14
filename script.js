@@ -53,7 +53,16 @@ function filteredEpisodes(){
 
 function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
-  rootElem.innerHTML = '';  
+  const existingContainer = document.getElementById("episode-container"); 
+
+  episodeContainer = existingContainer || document.createElement("div");
+  episodeContainer.id = "episode-container";
+  episodeContainer.innerHTML = "";
+
+  episodeList.forEach((episode) => {
+    const episodeCard = document.createElement("div");
+    episodeCard.className = "episode-card";
+  })
 
   const episodeCount = document.createElement('p');
   episodeCount.textContent = `Got ${episodeList.length} episode(s)`;
