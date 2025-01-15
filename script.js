@@ -6,9 +6,9 @@ const state = {
 function setup() {
   //Initialize the state will all episodes 
   state.episodes = getAllEpisodes();
-
   createSearchBar(); // create search bar and render the initial episodes
-  makePageForEpisodes(state.episodes);
+  createSelectMenu(state.episodes); // Add the drop-down menu 
+  makePageForEpisodes(state.episodes); // Display all episodes 
 }
 
 function createSearchBar(){
