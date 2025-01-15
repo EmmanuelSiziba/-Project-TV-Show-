@@ -11,6 +11,17 @@ function setup() {
   makePageForEpisodes(state.episodes); // Display all episodes 
 }
 
+// function to create drop-down 
+function createSelectMenu(episodes){
+  const rootElem = document.getElementById("root");
+
+  // create the select element
+  const selectElem = document.createElement("select");
+  selectElem.id = "episode-select";
+
+  
+}
+
 function createSearchBar(){
   const rootElem = document.getElementById("root");
 
