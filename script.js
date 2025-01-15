@@ -40,7 +40,20 @@ function createSelectMenu(episodes){
   selectElem.addEventListener("change", handleSelectChange);
 }
 
-// event handler for the drop-down menu 
+// event handler for the drop-down menu
+function handleSelectChange(event) {
+  const selectedValue = event.target.value; 
+
+  if(selectedValue === "all"){
+    // show all episodes 
+    makePageForEpisodes(state.episodes);
+  }else { // find the selected episode
+    const selectedEpisode = state.episodes.find((episode) => episode.id.toString() === selectedValue);
+    if(selectedEpisode){
+      makePageForEpisodes([selectedEpisode]); // display only the selected episode
+    }
+  }
+}
 
 
 function createSearchBar(){
