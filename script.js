@@ -36,8 +36,12 @@ function createSelectMenu(episodes){
   // attach the select menu to the page
   rootElem.insertBefore(selectElem,rootElem.firstChild);
 
-
+  // listen for changes to the drop-down 
+  selectElem.addEventListener("change", handleSelectChange);
 }
+
+// event handler for the drop-down menu 
+
 
 function createSearchBar(){
   const rootElem = document.getElementById("root");
