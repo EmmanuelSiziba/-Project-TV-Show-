@@ -19,7 +19,11 @@ function createSelectMenu(episodes){
   const selectElem = document.createElement("select");
   selectElem.id = "episode-select";
 
-  
+  // add a show all episodes option 
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "all";
+  defaultOption.textContent = "Select All Episodes";
+  selectElem.appendChild(defaultOption);
 }
 
 function createSearchBar(){
