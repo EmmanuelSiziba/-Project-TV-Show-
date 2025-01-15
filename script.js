@@ -24,6 +24,16 @@ function createSelectMenu(episodes){
   defaultOption.value = "all";
   defaultOption.textContent = "Select All Episodes";
   selectElem.appendChild(defaultOption);
+
+  // populate the select menu with episode options 
+  episodes.forEach((episode) => {
+    const option = document.createElement("option");
+    option.value = episode.id; // use episode id as the value
+    option.textContent = `S${String(episode.season).padStart(2, "0")}E${String(episode.number).padStart(2, "0")}-${episode.name}`;
+    selectElem.appendChild(option);
+  })
+
+
 }
 
 function createSearchBar(){
