@@ -13,9 +13,13 @@
   margin-top: -3rem;
 }
 
+#search-input {
+  width: 17%;
+}
+
 #search-count {
   margin-top: 6rem;
-  margin-left: -9.50rem;
+  margin-left: -11.50rem;
 }
 
 .episode-card {
