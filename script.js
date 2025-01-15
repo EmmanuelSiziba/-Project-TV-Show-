@@ -31,7 +31,10 @@ function createSelectMenu(episodes){
     option.value = episode.id; // use episode id as the value
     option.textContent = `S${String(episode.season).padStart(2, "0")}E${String(episode.number).padStart(2, "0")}-${episode.name}`;
     selectElem.appendChild(option);
-  })
+  });
+
+  // attach the select menu to the page
+  rootElem.insertBefore(selectElem,rootElem.firstChild);
 
 
 }
