@@ -18,6 +18,11 @@
   padding: 5px;
 }
 
+#episode-select {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
 #search-count {
   margin-top: 6rem;
   margin-left: -11.50rem;
