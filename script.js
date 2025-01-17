@@ -3,9 +3,24 @@ const state = {
   searchTerm: "", // tracks the search term entered by the user
 };
 
-function setup() {
+const endpoint = " https://api.tvmaze.com/shows/82/episodes";
+
+const fetchFilms = async () => {
+  const response = await fetch(endpoint);
+  return await response.json();
+}; // Our async function returns a Promise
+
+fetchFilms().then((films) => {
+  // When the fetchFilms Promise resolves, this callback will be called.
+  state.films = films;
+  render();
+});
+
+async function setup() {
   //Initialize the state will all episodes 
-  state.episodes = getAllEpisodes();
+  const films = await fetchFilms();
+  state.episodes = films;
+  //state.episodes = getAllEpisodes();
   createSearchBar(); // create search bar and render the initial episodes
   createSelectMenu(state.episodes); // Add the drop-down menu 
   makePageForEpisodes(state.episodes); // Display all episodes 
