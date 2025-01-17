@@ -5,7 +5,7 @@ const state = {
 
 const endpoint = " https://api.tvmaze.com/shows";
 
-const fetchFilms = async () => {
+const fetchData = async () => {
   try {
     //Show loading status 
     document.getElementById("status").textContent = "Loading episodes, please wait..."
@@ -31,9 +31,9 @@ const fetchFilms = async () => {
 
 }; // Our async function returns a Promise// Our async function returns a Promise
 
-fetchFilms().then((films) => {
+fetchData().then((shows) => {
   // When the fetchFilms Promise resolves, this callback will be called.
-  state.films = films;
+  state.shows = shows;
   render();
 });
 
