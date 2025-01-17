@@ -54,14 +54,14 @@ function createShowSelectMenu(shows) {
   const selectElem = document.createElement("select");
   selectElem.id = "show-selector";
 
-
-  
-
-  // add a show all episodes option 
+  // Add default option
   const defaultOption = document.createElement("option");
-  defaultOption.value = "all";
-  defaultOption.textContent = "Select All Episodes";
+  defaultOption.value = "";
+  defaultOption.textContent = "Select a Show";
   selectElem.appendChild(defaultOption);
+
+
+
 
   // populate the select menu with episode options 
   episodes.forEach((episode) => {
