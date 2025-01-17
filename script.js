@@ -6,9 +6,30 @@ const state = {
 const endpoint = " https://api.tvmaze.com/shows";
 
 const fetchFilms = async () => {
-  const response = await fetch(endpoint);
-  return await response.json();
-}; // Our async function returns a Promise
+  try {
+    //Show loading status 
+    document.getElementById("status").textContent = "Loading episodes, please wait..."
+
+    const response = await fetch(endpoint);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch episodes");
+    }
+    const data = await response.json();
+
+    //clear the status message
+    document.querySelector("#status").textContent = "";
+
+    return data;
+
+  } catch (error) {
+
+    document.getElementById("status").textContent = "Error fetching episodes. Please try again later.";
+    alert("Error fetching episodes:", error);
+    return [];
+  }
+
+}; // Our async function returns a Promise// Our async function returns a Promise
 
 fetchFilms().then((films) => {
   // When the fetchFilms Promise resolves, this callback will be called.
