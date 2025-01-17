@@ -60,7 +60,15 @@ function createShowSelectMenu(shows) {
   defaultOption.textContent = "Select a Show";
   selectElem.appendChild(defaultOption);
 
-
+  // Populate dropdown with shows
+  shows
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))
+    .forEach((show) => {
+      const option = document.createElement("option");
+      option.value = show.id;
+      option.textContent = show.name;
+      selectElem.appendChild(option);
+    });
 
 
   // populate the select menu with episode options 
