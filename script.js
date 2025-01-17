@@ -47,13 +47,15 @@ async function setup() {
   createSearchBar(); // Create the search bar
 }
 
-// function to create drop-down 
-function createSelectMenu(episodes){
+// Create dropdown for shows
+function createShowSelectMenu(shows) {
   const rootElem = document.getElementById("root");
 
-  // create the select element
   const selectElem = document.createElement("select");
-  selectElem.id = "episode-select";
+  selectElem.id = "show-selector";
+
+
+  
 
   // add a show all episodes option 
   const defaultOption = document.createElement("option");
