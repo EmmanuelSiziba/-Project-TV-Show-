@@ -37,14 +37,14 @@ fetchFilms().then((films) => {
   render();
 });
 
+// Setup function to initialize the app
 async function setup() {
-  //Initialize the state will all episodes 
-  const films = await fetchFilms();
-  state.episodes = films;
-  //state.episodes = getAllEpisodes();
-  createSearchBar(); // create search bar and render the initial episodes
-  createSelectMenu(state.episodes); // Add the drop-down menu 
-  makePageForEpisodes(state.episodes); // Display all episodes 
+  // Fetch and display shows
+  const shows = await fetchData(endpoint);
+  state.shows = shows;
+
+  createShowSelectMenu(shows); // Add the show selection menu
+  createSearchBar(); // Create the search bar
 }
 
 // function to create drop-down 
