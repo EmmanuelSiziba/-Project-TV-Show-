@@ -3,7 +3,7 @@ const state = {
   searchTerm: "", // tracks the search term entered by the user
 };
 
-const endpoint = " https://api.tvmaze.com/shows/82/episodes";
+const endpoint = " https://api.tvmaze.com/shows";
 
 const fetchFilms = async () => {
   const response = await fetch(endpoint);
