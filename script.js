@@ -100,16 +100,13 @@ function createEpisodeSelectMenu(episodes) {
   defaultOption.textContent = "Select All Episodes";
   selectElem.appendChild(defaultOption);
 
-  if(selectedValue === "all"){
-    // show all episodes 
-    makePageForEpisodes(state.episodes);
-  }else { // find the selected episode
-    const selectedEpisode = state.episodes.find((episode) => episode.id.toString() === selectedValue);
-    if(selectedEpisode){
-      makePageForEpisodes([selectedEpisode]); // display only the selected episode
-    }
-  }
-}
+  // Populate dropdown with episodes
+  episodes.forEach((episode) => {
+    const option = document.createElement("option");
+    option.value = episode.id;
+    option.textContent = `${formatEpisodeCode(episode.season, episode.number)} - ${episode.name}`;
+    selectElem.appendChild(option);
+  });
 
 
 function createSearchBar(){
