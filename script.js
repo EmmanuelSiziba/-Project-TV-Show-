@@ -33,7 +33,7 @@ const fetchData = async () => {
 
 fetchData().then((shows) => {
   // When the fetchFilms Promise resolves, this callback will be called.
-  state.shows = shows;
+  state.episodes = shows;
   render();
 });
 
