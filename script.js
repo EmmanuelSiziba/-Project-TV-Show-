@@ -41,9 +41,9 @@ fetchData().then((shows) => {
 async function setup() {
   // Fetch and display shows
   const shows = await fetchData(endpoint);
-
   createShowSelectMenu(shows); // Add the show selection menu
   createSearchBar(); // Create the search bar
+  makePageForEpisodes(shows)
 }
 
 // Create dropdown for shows
