@@ -94,16 +94,11 @@ function createEpisodeSelectMenu(episodes) {
   const selectElem = document.createElement("select");
   selectElem.id = "episode-select";
 
-  // attach the select menu to the page
-  rootElem.insertBefore(selectElem,rootElem.firstChild);
-
-  // listen for changes to the drop-down 
-  selectElem.addEventListener("change", handleSelectChange);
-}
-
-// event handler for the drop-down menu
-function handleSelectChange(event) {
-  const selectedValue = event.target.value; 
+  // Add default option to show all episodes
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "all";
+  defaultOption.textContent = "Select All Episodes";
+  selectElem.appendChild(defaultOption);
 
   if(selectedValue === "all"){
     // show all episodes 
