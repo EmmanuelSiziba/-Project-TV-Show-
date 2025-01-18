@@ -73,11 +73,17 @@ function createShowSelectMenu(shows) {
   selectElem.addEventListener("change", async (event) => {
     const showId = event.target.value;
     if (showId) {
+      // Fetch and display episodes for the selected show
       const episodesEndpoint = `https://api.tvmaze.com/shows/${showId}/episodes`;
       const episodes = await fetchData(episodesEndpoint);
       state.episodes = episodes;
       createEpisodeSelectMenu(episodes); // Update the episode dropdown
-      makePageForEpisodes(episodes); // Display episodes for selected show
+      makePageForEpisodes(episodes); // Display episodes for the selected show
+    } else {
+      // If "Select a Show" is chosen, display all shows again
+      makePageForEpisodes(shows);
+      const episodeSelect = document.getElementById("episode-select");
+      if (episodeSelect) episodeSelect.remove(); // Remove episode dropdown
     }
   });
 
