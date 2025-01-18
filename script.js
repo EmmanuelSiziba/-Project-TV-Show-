@@ -3,7 +3,7 @@ const state = {
   searchTerm: "", // tracks the search term entered by the user
 };
 
-const endpoint = " https://api.tvmaze.com/shows";
+const endpoint = "https://api.tvmaze.com/shows";
 
 const fetchData = async (endpoint) => {
   try {
@@ -31,11 +31,6 @@ const fetchData = async (endpoint) => {
 
 }; // Our async function returns a Promise// Our async function returns a Promise
 
-fetchData().then((shows) => {
-  // When the fetchFilms Promise resolves, this callback will be called.
-  state.episodes = shows;
-  
-});
 
 // Setup function to initialize the app
 async function setup() {
