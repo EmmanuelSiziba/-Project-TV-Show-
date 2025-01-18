@@ -85,6 +85,14 @@ function createShowSelectMenu(shows) {
   rootElem.prepend(selectElem);
 }
   
+// Create dropdown for episodes
+function createEpisodeSelectMenu(episodes) {
+  const existingSelect = document.getElementById("episode-select");
+  if (existingSelect) existingSelect.remove();
+
+  const rootElem = document.getElementById("root");
+  const selectElem = document.createElement("select");
+  selectElem.id = "episode-select";
 
   // attach the select menu to the page
   rootElem.insertBefore(selectElem,rootElem.firstChild);
