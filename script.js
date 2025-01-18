@@ -1,5 +1,5 @@
 const state = {
-  shows: [], // will store all episodes fetched from getAllEpisodes() function 
+  episodes: [], // will store all episodes fetched from getAllEpisodes() function 
   searchTerm: "", // tracks the search term entered by the user
 };
 
