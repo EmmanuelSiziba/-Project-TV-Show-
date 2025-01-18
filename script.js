@@ -5,7 +5,7 @@ const state = {
 
 const endpoint = " https://api.tvmaze.com/shows";
 
-const fetchData = async () => {
+const fetchData = async (endpoint) => {
   try {
     //Show loading status 
     document.getElementById("status").textContent = "Loading episodes, please wait..."
@@ -34,17 +34,16 @@ const fetchData = async () => {
 fetchData().then((shows) => {
   // When the fetchFilms Promise resolves, this callback will be called.
   state.episodes = shows;
+  
 });
 
 // Setup function to initialize the app
 async function setup() {
   // Fetch and display shows
   const shows = await fetchData(endpoint);
-  state.episodes = shows;
 
   createShowSelectMenu(shows); // Add the show selection menu
   createSearchBar(); // Create the search bar
-  makePageForEpisodes(shows)
 }
 
 // Create dropdown for shows
