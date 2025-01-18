@@ -45,6 +45,7 @@ async function setup() {
 
   createShowSelectMenu(shows); // Add the show selection menu
   createSearchBar(); // Create the search bar
+  makePageForEpisodes(shows)
 }
 
 // Create dropdown for shows
@@ -62,7 +63,7 @@ function createShowSelectMenu(shows) {
 
   // Populate dropdown with shows
   shows
-    .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))
+    .sort((a, b) => a.name.localeCompare(b.name, undefined, {sensitivity: "base" }))
     .forEach((show) => {
       const option = document.createElement("option");
       option.value = show.id;
