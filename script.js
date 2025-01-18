@@ -34,7 +34,6 @@ const fetchData = async () => {
 fetchData().then((shows) => {
   // When the fetchFilms Promise resolves, this callback will be called.
   state.episodes = shows;
-  render();
 });
 
 // Setup function to initialize the app
