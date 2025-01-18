@@ -108,6 +108,20 @@ function createEpisodeSelectMenu(episodes) {
     selectElem.appendChild(option);
   });
 
+  // Add event listener for episode selection
+  selectElem.addEventListener("change", (event) => {
+    const selectedValue = event.target.value;
+
+    if (selectedValue === "all") {
+      makePageForEpisodes(state.episodes);
+    } else {
+      const selectedEpisode = state.episodes.find((episode) => episode.id.toString() === selectedValue);
+      makePageForEpisodes(selectedEpisode ? [selectedEpisode] : []);
+    }
+  });
+
+  rootElem.prepend(selectElem);
+}
 
 function createSearchBar(){
   const rootElem = document.getElementById("root");
