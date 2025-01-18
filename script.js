@@ -139,7 +139,7 @@ function createSearchBar(){
   //paragraph to show number of matching episodes
   const searchCount = document.createElement("p");
   searchCount.id = "search-count";
-  searchCount.textContent = `Got ${state.episodes.length} episode(s)`;
+  
 
   // event listener to update search term and filter episodes 
   searchInput.addEventListener("input", () => {
