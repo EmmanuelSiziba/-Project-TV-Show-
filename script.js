@@ -70,14 +70,21 @@ function createShowSelectMenu(shows) {
       selectElem.appendChild(option);
     });
 
-
-  // populate the select menu with episode options 
-  episodes.forEach((episode) => {
-    const option = document.createElement("option");
-    option.value = episode.id; // use episode id as the value
-    option.textContent = `S${String(episode.season).padStart(2, "0")}E${String(episode.number).padStart(2, "0")}-${episode.name}`;
-    selectElem.appendChild(option);
+  // Add event listener for show selection
+  selectElem.addEventListener("change", async (event) => {
+    const showId = event.target.value;
+    if (showId) {
+      const episodesEndpoint = `https://api.tvmaze.com/shows/${showId}/episodes`;
+      const episodes = await fetchData(episodesEndpoint);
+      state.episodes = episodes;
+      createEpisodeSelectMenu(episodes); // Update the episode dropdown
+      makePageForEpisodes(episodes); // Display episodes for selected show
+    }
   });
+
+  rootElem.prepend(selectElem);
+}
+  
 
   // attach the select menu to the page
   rootElem.insertBefore(selectElem,rootElem.firstChild);
