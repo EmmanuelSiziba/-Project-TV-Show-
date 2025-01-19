@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: -3rem;
 }
 
 #search-container {
@@ -14,15 +14,20 @@
 }
 
 #search-input {
-  margin-top: 1rem;
-  margin-left: -6rem;
+  margin-top: -2.5rem;
+  margin-left: 6rem;
   width: 17%;
   padding: 5px;
 }
 
 #episode-select {
-  margin-top: 2rem;
-  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-left: 19rem;
+}
+
+#show-selector {
+margin-top: -14rem;
+margin-left: 3rem;
 }
 
 #search-count {
