@@ -5,7 +5,7 @@ const state = {
 
 const endpoint = "https://api.tvmaze.com/shows";
 
- main
+ 
 const fetchData = async (endpoint) => {
   try {
     //Show loading status 
@@ -44,7 +44,7 @@ fetchFilms().then((films) => {
 
   render();
 });
-main
+
 
     if (!response.ok) {
       throw new Error("Failed to fetch episodes");
