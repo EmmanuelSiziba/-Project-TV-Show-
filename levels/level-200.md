@@ -57,8 +57,7 @@ Here is one example layout.
 
 ### Episode selector
 
-Add a `select` drop-down which lets the user jump quickly to a particular episode, with the following requirements:
-1. The select input should list all episodes in the format: "S01E01 - Winter is Coming"
+55 
 2. When the user makes a selection, they should be taken directly to that episode in the list
 3. Bonus: if you prefer, when the select is used, ONLY show the selected episode. If you do this, be sure to provide a way for the user to see all episodes again.
 
