@@ -137,35 +137,27 @@ function makePageForEpisodes(episodeList) {
     document.body.appendChild(episodeContainer); // Append to body or a specific container
   }
 
-  episodeContainer.innerHTML = ""; // Clear the existing content
-
-  if (episodeList.length === 0) {
-    const noEpisodesMessage = document.createElement('p');
-    noEpisodesMessage.textContent = 'No episodes available.';
-    episodeContainer.appendChild(noEpisodesMessage);
-    return;
-  }
+  episodeContainer.innerHTML = "";
 
   // Create cards for each episode
   episodeList.forEach((episode) => {
     const episodeCard = document.createElement("div");
     episodeCard.className = "episode-card";
 
-    // Ensure that name, season, number are properly handled and not undefined
     const episodeTitle = document.createElement('h3');
-    episodeTitle.textContent = episode.name ? `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}` : "No title available";
+    episodeTitle.textContent = `${episode.name} - ${formatEpisodeCode(episode.season, episode.number)}`;
 
     const episodeImage = document.createElement('img');
-    episodeImage.src = episode.image?.medium || 'placeholder.jpg'; // Use a placeholder if the image is undefined
-    episodeImage.alt = episode.name || "No image available";
+    episodeImage.src = episode.image?.medium || 'placeholder.jpg';
+    episodeImage.alt = episode.name;
 
     const episodeSummary = document.createElement('p');
-    episodeSummary.innerHTML = episode.summary ? episode.summary : 'No summary available.'; // Ensure summary exists
+    episodeSummary.innerHTML = episode.summary || 'No summary available.';
 
     const episodeLink = document.createElement("a");
-    episodeLink.href = episode.url || "#"; // Use a fallback if the URL is undefined
+    episodeLink.href = episode.url;
     episodeLink.target = "_blank";
-    episodeLink.textContent = episode.url ? "Click to Watch" : "No link available";
+    episodeLink.textContent = "Click to Watch";
 
     episodeCard.appendChild(episodeTitle);
     episodeCard.appendChild(episodeImage);
