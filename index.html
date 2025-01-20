@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TV Show Project | Emmanuel Siziba</title>
-    <link href="style.css" rel="stylesheet" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  </head>
-
-  <body>
-    <div id="status"></div>
-    <div id="root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Show Project | Simphiwe-Mabuya</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body id="layout">
+  <header class="tv-show-heading">
+    <h1>
+      TV Show APP 
+      <span class="play-icon">▶</span> <!-- Play icon -->
+    </h1>
+    <p class="slogan">From Classics to Hits, We've Got You Covered.</p> <!-- Slogan -->
+  </header>
+  <div id="status"></div>
+  <div id="root">
+    <div id="search-container">
+      <input type="text" id="search-input" placeholder="Search episodes by title or summary" />
+      <select id="show-selector">
+        <option value="">Select a Show</option>
+        <!-- Show options will be populated here -->
+      </select>
+      <select id="episode-select">
+        <option value="all">Select All Episodes</option>
+        <!-- Episode options will be populated here -->
+      </select>
     </div>
-
-    <!-- Loads YOUR javascript code -->
-    <script src="script.js"></script>
-  </body>
+    <div id="episode-container">
+      <!-- Episode cards will be populated here -->
+    </div>
+  </div>
+  <script src="episodes.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

@@ -1,75 +1,269 @@
-#episode-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: -3rem;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
+/* Centered Header */
+header {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Play Icon */
+.play-icon {
+  color: red; /* Red color for the play icon */
+  font-size: 1.5em; /* Adjust size as needed */
+  vertical-align: middle; /* Align with text */
+  margin-left: 5px; /* Space between the heading and the icon */
+  padding: 10px; /* Padding for the circle */
+  background-color: white; /* White background for the circle */
+  border: 2px solid white; /* White border around the icon */
+  border-radius: 50%; /* Make it circular */
+  display: inline-block; /* Ensure it behaves like a block element */
+}
+
+/* Slogan */
+.slogan {
+  font-size: 1em; /* Adjust size as needed */
+  color: #fff; /* White color for the slogan */
+  margin-top: 10px; /* Space above the slogan */
+  padding: 10px; /* Padding inside the slogan box */
+  border: 2px solid white; /* White border around the slogan */
+  border-radius: 5px; /* Rounded corners for the border */
+  display: inline-block; /* Center the slogan */
+}
+
+/* Search Container */
 #search-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-top: -3rem;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
 }
 
+/* Search Input */
 #search-input {
-  margin-top: -2.5rem;
-  margin-left: 6rem;
-  width: 17%;
-  padding: 5px;
+  width: 70%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
 }
 
-#episode-select {
-  margin-top: 1rem;
-  margin-left: 19rem;
-}
-
-#show-selector {
-margin-top: -14rem;
-margin-left: 3rem;
-}
-
-#search-count {
-  margin-top: 6rem;
-  margin-left: -11.50rem;
-}
-
-.episode-card {
+/* Show and Episode Select Dropdowns */
+#show-selector, #episode-select {
+  margin: 10px;
+  padding: 8px;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 1.5rem; /* Padding for the card */
-  max-width: 300px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.episode-card img {
-  max-width: 100%;
-  border-radius: 5px;
+/* Episode Container */
+#episode-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+  gap: 20px; /* Space between cards */
+  padding: 15px;
+}
+
+/* Episode Card */
+.episode-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 400px; /* Increased width for cards */
+  height: auto; /* Allow height to adjust based on content */
+}
+
+.episode-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Episode Image Container */
+.episode-image-container {
+  width: 100%;
+  height: 150px; /* Fixed height for images */
+  overflow: hidden; /* Hide overflow */
+}
+
+.episode-image-container img {
+  width: 100%;
+  height: 100%; /* Fill the container */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+/* Episode Card Title */
+.episode-card h3 {
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 8px;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Episode Card Summary */
+.episode-card p {
+  padding: 10px; /* Increased padding for better readability */
+  font-size: 0.9em; /* Slightly larger font size for better visibility */
+  color: #333;
+  text-align: left; /* Align text to the left for better readability */
+  flex-grow: 1; /* Allow the summary to take up available space */
+  line-height: 1.5; /* Increased line spacing for better readability */
+  margin: 0; /* Remove default margin */
+}
+
+/* Info Buttons */
+.info-button {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  background-color: yellow; /* Yellow background for buttons */
+  color: black; /* Black text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.info-button:hover {
+  background-color: #e6e600; /* Darker yellow on hover */
+}
+
+/* Episode Card Link */
+.episode-card a {
+  display: block;
+  text-align: center;
+  padding: 10px; /* Increased padding for better touch targets */
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-top: 1px solid #ddd; /* Add a border above the button */
+}
+
+.episode-card a:hover {
+  background-color: #0056b3;
+}
+
+/* Back Button */
+#back-button {
+  margin: 15px;
+  padding: 10px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#back-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #episode-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards in a row on medium screens */
+  }
+}
+
+/* Episode Card Container */
+.episode-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 400px;
+  height: auto;
+}
+
+/* Info Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ffeb3b; /* Yellow background */
+  border-top: 1px solid #ddd;
+}
+
+/* Info Buttons */
+.info-button {
+  background-color: #ffeb3b;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85em;
+  color: #333;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.info-button:hover {
+  background-color: #fdd835; /* Darker yellow on hover */
 }
 
 .episode-card h3 {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-  padding: 0.5rem; /* Added padding for the title */
-  background-color: #f0f0f0; /* Optional: background color for better visibility */
-  border-radius: 3px; /* Optional: rounded corners for the title background */
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 8px;
+  font-size: 1em;
+  text-align: center;
 }
 
 .episode-card p {
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
+  padding: 10px;
+  font-size: 0.9em;
+  color: #333;
+  text-align: left;
+  flex-grow: 1;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .episode-card a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
   text-decoration: none;
-  color: #0077cc;
+  font-size: 0.85em;
   font-weight: bold;
+  border-top: 1px solid #ddd;
 }
 
-p {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
+.episode-card a:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 480px) {
+  #episode-container {
+    grid-template-columns: 1fr; /* 1 card in a row on small screens */
+  }
+
+  #search-input {
+    width: 100%; /* Full width on small screens */
+  }
 }
